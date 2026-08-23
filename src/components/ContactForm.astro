@@ -1,0 +1,53 @@
+---
+import { getContent, type Lang } from '../i18n/content';
+import { getRelativeLocaleUrl } from 'astro:i18n';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const { formulario } = getContent(lang);
+const privacyHref = getRelativeLocaleUrl(lang, '/aviso-de-privacidad');
+---
+
+<form action={formulario.formspree_url} method="POST" class="grid gap-4 max-w-xl">
+  <div>
+    <label for="name" class="block text-sm font-medium text-neutral-700">{formulario.nombre_label}</label>
+    <input id="name" name="name" type="text" required placeholder={formulario.placeholder_nombre}
+      class="mt-1 w-full rounded-lg border border-neutral-300 px-3.5 py-3 transition-colors outline-none focus:border-primary focus:ring-2 focus:ring-primary/15" />
+  </div>
+
+  <div>
+    <label for="email" class="block text-sm font-medium text-neutral-700">{formulario.email_label}</label>
+    <input id="email" name="email" type="email" required placeholder={formulario.placeholder_email}
+      class="mt-1 w-full rounded-lg border border-neutral-300 px-3.5 py-3 transition-colors outline-none focus:border-primary focus:ring-2 focus:ring-primary/15" />
+  </div>
+
+  <div>
+    <label for="phone" class="block text-sm font-medium text-neutral-700">{formulario.telefono_label}</label>
+    <input id="phone" name="phone" type="tel" placeholder={formulario.placeholder_telefono}
+      class="mt-1 w-full rounded-lg border border-neutral-300 px-3.5 py-3 transition-colors outline-none focus:border-primary focus:ring-2 focus:ring-primary/15" />
+  </div>
+
+  <div>
+    <label for="interest" class="block text-sm font-medium text-neutral-700">{formulario.idioma_label}</label>
+    <select id="interest" name="interest" class="mt-1 w-full rounded-lg border border-neutral-300 px-3.5 py-3 transition-colors outline-none focus:border-primary focus:ring-2 focus:ring-primary/15">
+      <option value="">{formulario.idioma_placeholder}</option>
+      {formulario.idioma_opciones.map((o) => <option value={o}>{o}</option>)}
+    </select>
+  </div>
+
+  <div>
+    <label for="message" class="block text-sm font-medium text-neutral-700">{formulario.mensaje_label}</label>
+    <textarea id="message" name="message" rows="4" placeholder={formulario.placeholder_mensaje}
+      class="mt-1 w-full rounded-lg border border-neutral-300 px-3 py-2 transition-colors outline-none focus:border-primary focus:ring-2 focus:ring-primary/15"></textarea>
+  </div>
+
+  <button type="submit" class="btn-primary">{formulario.enviar_texto}</button>
+
+  <p class="text-xs text-neutral-500">
+    {formulario.nota_privacidad}
+    {' '}<a href={privacyHref} class="underline">{formulario.link_privacidad}</a>.
+  </p>
+</form>

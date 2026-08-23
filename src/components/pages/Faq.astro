@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import FaqItem from '../FaqItem.astro';
+import { getContent, type Lang } from '../../i18n/content';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const { faq } = getContent(lang);
+const title = lang === 'es' ? 'Preguntas Frecuentes' : 'Frequently Asked Questions';
+---
+
+<BaseLayout lang={lang} path="/faq" title={title}>
+  <section class="section-padding">
+    <div class="container-base max-w-2xl">
+      <h1 class="font-heading text-3xl font-bold text-primary text-center">{title}</h1>
+      <div class="mt-8">
+        {faq.map((item) => <FaqItem pregunta={item.pregunta} respuesta={item.respuesta} />)}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

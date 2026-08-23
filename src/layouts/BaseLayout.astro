@@ -1,0 +1,94 @@
+---
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import { getContent, LANGS, type Lang } from '../i18n/content';
+import { asset } from '../utils/url';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppBubble from '../components/WhatsAppBubble.astro';
+import '../styles/global.css';
+
+interface Props {
+  lang: Lang;
+  path: string; // locale-agnostic path, e.g. "/", "/nosotros", "/cursos/ingles"
+  title?: string;
+  description?: string;
+  image?: string;
+}
+
+const { lang, path, title, description, image } = Astro.props;
+const content = getContent(lang);
+const { escuela, contacto, seo } = content;
+
+const pageTitle = title ?? seo.titulo_sitio;
+const pageDescription = description ?? seo.descripcion_sitio;
+const ogImage = new URL(asset(image ?? content.hero.imagen), Astro.site).toString();
+const canonicalUrl = new URL(getRelativeLocaleUrl(lang, path), Astro.site).toString();
+
+const localBusinessJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'EducationalOrganization',
+  name: escuela.nombre,
+  url: Astro.site?.toString(),
+  email: contacto.email_principal,
+  telephone: contacto.telefono_tel,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: contacto.direccion,
+    addressLocality: escuela.ciudad,
+    addressCountry: 'MX',
+  },
+  foundingDate: String(escuela.fundacion),
+};
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href={asset('/favicon.ico')} />
+    <link rel="icon" type="image/png" sizes="32x32" href={asset('/favicon-32x32.png')} />
+    <link rel="icon" type="image/png" sizes="16x16" href={asset('/favicon-16x16.png')} />
+    <link rel="apple-touch-icon" sizes="180x180" href={asset('/apple-touch-icon.png')} />
+    <link rel="sitemap" href={asset('/sitemap-index.xml')} />
+    <link rel="canonical" href={canonicalUrl} />
+    {LANGS.map((l) => (
+      <link rel="alternate" hreflang={l} href={new URL(getRelativeLocaleUrl(l, path), Astro.site).toString()} />
+    ))}
+
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
+    <meta name="keywords" content={seo.palabras_clave.join(', ')} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:locale" content={lang === 'es' ? 'es_MX' : 'en_US'} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={pageDescription} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600;6..72,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script type="application/ld+json" set:html={JSON.stringify(localBusinessJsonLd)} />
+  </head>
+  <body class="bg-white text-neutral-900 font-body">
+    <a href="#main-content" class="skip-link">
+      {lang === 'es' ? 'Saltar al contenido' : 'Skip to content'}
+    </a>
+    <Nav lang={lang} path={path} />
+    <main id="main-content">
+      <slot />
+    </main>
+    <Footer lang={lang} />
+    <WhatsAppBubble lang={lang} />
+  </body>
+</html>

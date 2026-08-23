@@ -1,0 +1,82 @@
+---
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Icon from '../Icon.astro';
+import { getContent, type Lang } from '../../i18n/content';
+import { asset } from '../../utils/url';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const { intercambio } = getContent(lang);
+---
+
+<BaseLayout lang={lang} path="/intercambio" title={intercambio.titulo} image={intercambio.imagen_hero}>
+  <section class="section-padding bg-secondary">
+    <div class="container-base text-center">
+      <h1 class="font-heading text-3xl md:text-4xl font-bold text-primary">{intercambio.titulo}</h1>
+      <p class="mt-2 text-lg text-neutral-600">{intercambio.subtitulo}</p>
+      <p class="mt-4 max-w-2xl mx-auto text-neutral-700">{intercambio.descripcion_larga}</p>
+    </div>
+  </section>
+
+  <section class="section-padding">
+    <div class="container-base grid gap-6 md:grid-cols-2">
+      {intercambio.destinos.map((d) => (
+        <div class="overflow-hidden rounded-2xl bg-white shadow-[0_2px_10px_-4px_rgba(30,58,95,0.15)] transition-shadow hover:shadow-[0_16px_32px_-16px_rgba(30,58,95,0.35)]">
+          <div class="relative h-48 overflow-hidden">
+            <img src={asset(d.imagen)} alt={d.ciudad} class="h-full w-full object-cover" loading="lazy" />
+            <div class="absolute inset-0 bg-gradient-to-t from-primary/25 via-primary/0 to-primary/0"></div>
+          </div>
+          <div class="p-5">
+            <h3 class="font-heading text-lg font-semibold text-primary">{d.ciudad}</h3>
+            <p class="text-sm text-neutral-500">{d.edad}</p>
+            <p class="mt-2 text-neutral-700">{d.descripcion}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="section-padding bg-secondary">
+    <div class="container-base grid gap-10 md:grid-cols-2">
+      <div>
+        <h2 class="font-heading text-xl font-semibold text-primary">{lang === 'es' ? 'Incluye' : "What's included"}</h2>
+        <ul class="mt-3 space-y-1 text-neutral-700">
+          {intercambio.incluye.map((i) => <li>✓ {i}</li>)}
+        </ul>
+      </div>
+      <div>
+        <h2 class="font-heading text-xl font-semibold text-primary">{lang === 'es' ? 'Duración' : 'Duration'}</h2>
+        <p class="mt-3 text-neutral-700">{intercambio.duracion}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding">
+    <div class="container-base grid gap-8 md:grid-cols-2">
+      {intercambio.puntos_venta.map((p) => (
+        <div class="flex gap-4">
+          <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-secondary text-primary">
+            <Icon name={p.icono} class="h-6 w-6" />
+          </div>
+          <div>
+            <h3 class="font-heading font-semibold text-primary">{p.titulo}</h3>
+            <p class="mt-1 text-sm text-neutral-600">{p.descripcion}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="section-padding bg-primary text-white text-center">
+    <div class="container-base">
+      <p class="text-lg">{intercambio.urgencia}</p>
+      <a href={getRelativeLocaleUrl(lang, intercambio.cta.href)} class="btn-secondary mt-6 inline-block">
+        {intercambio.cta.texto}
+      </a>
+    </div>
+  </section>
+</BaseLayout>

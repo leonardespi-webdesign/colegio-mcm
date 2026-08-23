@@ -1,0 +1,49 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import HeroSection from '../HeroSection.astro';
+import CourseCard from '../CourseCard.astro';
+import CtaBanner from '../CtaBanner.astro';
+import Icon from '../Icon.astro';
+import { getContent, type Lang } from '../../i18n/content';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const content = getContent(lang);
+const { propuestas_valor, idiomas, intercambio } = content;
+---
+
+<BaseLayout lang={lang} path="/">
+  <HeroSection lang={lang} />
+
+  <section class="section-padding">
+    <div class="container-base grid gap-10 sm:grid-cols-2 md:grid-cols-4">
+      {propuestas_valor.map((item) => (
+        <div class="text-center">
+          <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-secondary text-primary">
+            <Icon name={item.icono} class="h-7 w-7" />
+          </div>
+          <h3 class="mt-4 font-heading font-semibold text-primary">{item.titulo}</h3>
+          <p class="mt-1 text-sm text-neutral-600">{item.descripcion}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="pt-14 pb-8 md:pt-20 md:pb-10 bg-secondary">
+    <div class="container-base">
+      <h2 class="font-heading text-2xl md:text-3xl font-bold text-primary text-center">
+        {lang === 'es' ? 'Nuestros cursos' : 'Our courses'}
+      </h2>
+      <div class="mt-8 grid gap-6 sm:grid-cols-2 max-w-2xl mx-auto">
+        {idiomas.map((idioma) => (
+          <CourseCard lang={lang} nombre={idioma.nombre} slug={idioma.slug} descripcion={idioma.descripcion} imagen={idioma.imagen} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CtaBanner lang={lang} texto={intercambio.urgencia} ctaTexto={intercambio.cta.texto} href={intercambio.cta.href} />
+</BaseLayout>

@@ -1,0 +1,62 @@
+---
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import { getContent, type Lang } from '../i18n/content';
+import { SITE } from '../config/site';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const { escuela, contacto, nav, maestros, testimonios } = getContent(lang);
+const privacyHref = getRelativeLocaleUrl(lang, '/aviso-de-privacidad');
+
+const emptySections: Record<string, boolean> = {
+  '/maestros': maestros.length === 0,
+  '/testimonios': testimonios.length === 0,
+};
+const links = nav.links.filter((link) => !emptySections[link.href]).slice(0, 4);
+---
+
+<footer class="bg-neutral-900 text-neutral-300 mt-24">
+  <div class="container-base py-12 grid gap-8 md:grid-cols-3">
+    <div>
+      <p class="font-heading text-white text-lg font-semibold">{escuela.nombre}</p>
+      <p class="mt-2 text-sm">{escuela.slogan}</p>
+      <p class="mt-1 text-sm">{escuela.ciudad}</p>
+    </div>
+
+    <div>
+      <p class="text-white font-semibold mb-2">{lang === 'es' ? 'Contacto' : 'Contact'}</p>
+      <p class="text-sm">
+        <a href={`mailto:${contacto.email_principal}`} class="hover:text-white">{contacto.email_principal}</a>
+      </p>
+      <p class="text-sm">
+        <a href={`tel:${contacto.telefono_tel}`} class="hover:text-white">{contacto.telefono_display}</a>
+      </p>
+      {(SITE.redesSociales.instagram || SITE.redesSociales.facebook) && (
+        <div class="mt-2 flex gap-3 text-sm">
+          {SITE.redesSociales.instagram && <a href={SITE.redesSociales.instagram} class="hover:text-white">Instagram</a>}
+          {SITE.redesSociales.facebook && <a href={SITE.redesSociales.facebook} class="hover:text-white">Facebook</a>}
+        </div>
+      )}
+    </div>
+
+    <div>
+      <p class="text-white font-semibold mb-2">{lang === 'es' ? 'Enlaces' : 'Links'}</p>
+      <ul class="space-y-1 text-sm">
+        {links.map((link) => (
+          <li><a href={getRelativeLocaleUrl(lang, link.href)} class="hover:text-white">{link.label}</a></li>
+        ))}
+      </ul>
+    </div>
+  </div>
+
+  <div class="border-t border-neutral-800 py-4 text-center text-xs text-neutral-500">
+    <a href={privacyHref} class="hover:text-white">
+      {lang === 'es' ? 'Aviso de Privacidad' : 'Privacy Notice'}
+    </a>
+    <span class="mx-2">·</span>
+    © {new Date().getFullYear()} {escuela.nombre}
+  </div>
+</footer>

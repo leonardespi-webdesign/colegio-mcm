@@ -1,0 +1,34 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import TestimonialCard from '../TestimonialCard.astro';
+import { getContent, type Lang } from '../../i18n/content';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const { testimonios } = getContent(lang);
+const title = lang === 'es' ? 'Testimonios' : 'Testimonials';
+const emptyState = lang === 'es'
+  ? 'Pronto compartiremos aquí las experiencias de nuestros alumnos y sus familias.'
+  : "We'll soon share our students' and families' experiences here.";
+---
+
+<BaseLayout lang={lang} path="/testimonios" title={title}>
+  <section class="section-padding">
+    <div class="container-base">
+      <h1 class="font-heading text-3xl font-bold text-primary text-center">{title}</h1>
+
+      {testimonios.length === 0 ? (
+        <p class="mt-8 text-center text-neutral-500 max-w-xl mx-auto">{emptyState}</p>
+      ) : (
+        <div class="mt-10 grid gap-6 md:grid-cols-3">
+          {testimonios.map((t) => (
+            <TestimonialCard nombre={t.nombre} rol={t.rol} texto={t.texto} imagen={t.imagen} />
+          ))}
+        </div>
+      )}
+    </div>
+  </section>
+</BaseLayout>

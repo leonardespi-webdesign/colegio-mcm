@@ -1,0 +1,30 @@
+---
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import type { Lang } from '../i18n/content';
+import { asset } from '../utils/url';
+
+interface Props {
+  lang: Lang;
+  nombre: string;
+  slug: string;
+  descripcion: string;
+  imagen: string;
+}
+
+const { lang, nombre, slug, descripcion, imagen } = Astro.props;
+const href = getRelativeLocaleUrl(lang, `/cursos/${slug}`);
+---
+
+<a
+  href={href}
+  class="group block overflow-hidden rounded-2xl bg-white shadow-[0_2px_10px_-4px_rgba(30,58,95,0.15)] transition-all hover:-translate-y-0.5 hover:shadow-[0_16px_32px_-16px_rgba(30,58,95,0.35)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+>
+  <div class="relative h-40 overflow-hidden">
+    <img src={asset(imagen)} alt={nombre} class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy" />
+    <div class="absolute inset-0 bg-gradient-to-t from-primary/25 via-primary/0 to-primary/0"></div>
+  </div>
+  <div class="p-5">
+    <h3 class="font-heading text-lg font-semibold text-primary">{nombre}</h3>
+    <p class="mt-1 text-sm text-neutral-600">{descripcion}</p>
+  </div>
+</a>

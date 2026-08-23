@@ -1,0 +1,99 @@
+---
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import { getContent, type Lang } from '../i18n/content';
+import LangSwitcher from './LangSwitcher.astro';
+import { asset } from '../utils/url';
+
+interface Props {
+  lang: Lang;
+  path: string;
+}
+
+const { lang, path } = Astro.props;
+const { escuela, nav, maestros, testimonios } = getContent(lang);
+const homeHref = getRelativeLocaleUrl(lang, '/');
+const contactHref = getRelativeLocaleUrl(lang, '/contacto');
+
+const emptySections: Record<string, boolean> = {
+  '/maestros': maestros.length === 0,
+  '/testimonios': testimonios.length === 0,
+};
+const links = nav.links.filter((link) => !emptySections[link.href]);
+---
+
+<header class="sticky top-0 z-20 border-b border-neutral-200 bg-white/95 backdrop-blur">
+  <div class="container-base flex items-center justify-between py-4">
+    <a href={homeHref} class="flex items-center gap-2 rounded-sm font-heading text-lg font-semibold text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary">
+      <img src={asset('/images/logo/mcm-crest.jpg')} alt="" class="h-9 w-9 shrink-0 object-contain" />
+      <span>{escuela.nombre}</span>
+    </a>
+
+    <nav class="hidden md:flex items-center gap-6" aria-label="Principal">
+      {links.map((link) => (
+        <a
+          href={getRelativeLocaleUrl(lang, link.href)}
+          class="rounded-sm text-sm font-medium text-neutral-700 transition-colors hover:text-primary aria-[current=page]:font-semibold aria-[current=page]:text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
+          aria-current={link.href === path ? 'page' : undefined}
+        >
+          {link.label}
+        </a>
+      ))}
+    </nav>
+
+    <div class="hidden md:flex items-center gap-4">
+      <LangSwitcher lang={lang} path={path} />
+      <a href={contactHref} class="btn-primary text-sm">{nav.cta_texto}</a>
+    </div>
+
+    <div class="flex items-center gap-3 md:hidden">
+      <LangSwitcher lang={lang} path={path} />
+      <button
+        type="button"
+        id="nav-toggle"
+        class="flex h-11 w-11 items-center justify-center rounded-lg text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+        aria-expanded="false"
+        aria-controls="nav-mobile-menu"
+        aria-label={lang === 'es' ? 'Abrir menú' : 'Open menu'}
+      >
+        <svg id="nav-icon-open" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" class="h-6 w-6">
+          <path d="M4 7h16M4 12h16M4 17h16" />
+        </svg>
+        <svg id="nav-icon-close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" class="hidden h-6 w-6">
+          <path d="M6 6l12 12M18 6L6 18" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <nav
+    id="nav-mobile-menu"
+    class="hidden md:hidden flex-col gap-1 border-t border-neutral-200 px-4 py-4"
+    aria-label="Principal (móvil)"
+  >
+    {links.map((link) => (
+      <a
+        href={getRelativeLocaleUrl(lang, link.href)}
+        class="rounded-lg px-2 py-3 text-base font-medium text-neutral-700 transition-colors hover:bg-secondary hover:text-primary aria-[current=page]:bg-secondary aria-[current=page]:font-semibold aria-[current=page]:text-primary focus-visible:outline focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-primary"
+        aria-current={link.href === path ? 'page' : undefined}
+      >
+        {link.label}
+      </a>
+    ))}
+    <a href={contactHref} class="btn-primary mt-2 text-center">{nav.cta_texto}</a>
+  </nav>
+</header>
+
+<script>
+  const toggle = document.getElementById('nav-toggle');
+  const menu = document.getElementById('nav-mobile-menu');
+  const iconOpen = document.getElementById('nav-icon-open');
+  const iconClose = document.getElementById('nav-icon-close');
+
+  toggle?.addEventListener('click', () => {
+    const isOpen = menu?.classList.toggle('flex');
+    menu?.classList.toggle('hidden');
+    iconOpen?.classList.toggle('hidden');
+    iconClose?.classList.toggle('hidden');
+    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+</script>

@@ -1,0 +1,26 @@
+---
+import { getContent, type Lang } from '../i18n/content';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const { contacto } = getContent(lang);
+const message = lang === 'es'
+  ? 'Hola, me gustaría más información sobre los cursos y el programa de intercambio.'
+  : "Hi, I'd like more information about the courses and the exchange program.";
+const href = `https://wa.me/${contacto.whatsapp}?text=${encodeURIComponent(message)}`;
+---
+
+<a
+  href={href}
+  target="_blank"
+  rel="noopener noreferrer"
+  class="fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] shadow-lg hover:brightness-95"
+  aria-label="WhatsApp"
+>
+  <svg viewBox="0 0 32 32" class="h-7 w-7 fill-white" aria-hidden="true">
+    <path d="M16.004 3C9.377 3 4 8.377 4 15.004c0 2.65.86 5.1 2.318 7.09L4.5 28.5l6.57-1.786a11.94 11.94 0 0 0 4.934 1.06h.005C22.63 27.774 28 22.4 28 15.77 28 9.14 22.63 3.767 16.004 3zm0 21.86h-.004a9.86 9.86 0 0 1-5.024-1.375l-.36-.213-3.746 1.02 1.004-3.65-.235-.375A9.83 9.83 0 0 1 6.14 15c0-5.44 4.427-9.865 9.868-9.865 2.636 0 5.113 1.028 6.977 2.895a9.8 9.8 0 0 1 2.888 6.978c0 5.44-4.427 9.852-9.868 9.852zm5.41-7.386c-.297-.148-1.755-.867-2.027-.966-.272-.099-.47-.148-.668.148-.198.297-.767.966-.94 1.164-.173.198-.347.223-.644.075-.297-.148-1.254-.462-2.39-1.474-.883-.788-1.48-1.76-1.653-2.058-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.148-.174.198-.298.297-.496.099-.198.05-.372-.025-.52-.074-.148-.668-1.61-.916-2.205-.242-.58-.487-.502-.668-.511l-.57-.01c-.198 0-.52.074-.792.372-.272.298-1.04 1.017-1.04 2.48 0 1.463 1.065 2.877 1.213 3.075.148.198 2.096 3.2 5.08 4.487.71.306 1.263.489 1.695.626.712.226 1.36.194 1.872.118.571-.085 1.755-.718 2.003-1.412.248-.694.248-1.288.173-1.412-.074-.124-.272-.198-.57-.347z" />
+  </svg>
+</a>

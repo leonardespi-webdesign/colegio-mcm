@@ -1,0 +1,21 @@
+---
+interface Props {
+  nombre: string;
+  rol: string;
+  foto: string;
+  credenciales?: string[];
+}
+
+const { nombre, rol, foto, credenciales = [] } = Astro.props;
+---
+
+<div class="rounded-2xl bg-white p-6 text-center shadow-[0_2px_10px_-4px_rgba(30,58,95,0.15)] transition-shadow hover:shadow-[0_16px_32px_-16px_rgba(30,58,95,0.35)]">
+  <img src={foto} alt={nombre} class="mx-auto h-24 w-24 rounded-full object-cover ring-4 ring-secondary" loading="lazy" />
+  <p class="mt-4 font-semibold text-neutral-900">{nombre}</p>
+  <p class="text-sm text-neutral-500">{rol}</p>
+  {credenciales.length > 0 && (
+    <ul class="mt-2 text-xs text-neutral-500 space-y-0.5">
+      {credenciales.map((c) => <li>{c}</li>)}
+    </ul>
+  )}
+</div>

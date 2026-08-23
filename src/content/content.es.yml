@@ -1,0 +1,369 @@
+# ============================================================
+# ARCHIVO DE CONTENIDO EDITABLE — COLEGIO MARÍA DEL CARMEN MURIEL (ES)
+# Edita este archivo para personalizar el sitio sin tocar código.
+#
+# LEYENDA:
+#   [CONFIRMADO]  dato real del cuestionario del cliente
+#   [ASUNCIÓN]    contenido razonable inventado, pendiente de validar con
+#                 Rosa Valladares antes de publicar
+# El cuestionario original llegó casi vacío — la mayoría de este archivo
+# es [ASUNCIÓN]. Ver README.md para la lista completa de pendientes.
+# ============================================================
+
+escuela:
+  nombre: "Colegio \"María del Carmen Muriel\""   # [CONFIRMADO]
+  slogan: "Educar para trascender"                 # [CONFIRMADO]
+  fundacion: 1987                                  # [CONFIRMADO]
+  ciudad: "Ciudad de México"                       # [CONFIRMADO]
+
+contacto:
+  email_principal: "inf.colegiomariadelcarmenmuriel@gmail.com"  # [CONFIRMADO]
+  telefono_display: "55 5659 9322"                               # [CONFIRMADO]
+  telefono_tel: "+525556599322"                                  # [CONFIRMADO]
+  whatsapp: "525556599322"              # [ASUNCIÓN] se asume el mismo número también recibe WhatsApp — confirmar con el cliente
+  whatsapp_display: "55 5659 9322"
+  contacto_nombre: "Rosa Valladares Solano"        # [CONFIRMADO]
+  contacto_puesto: "Directora General"             # [CONFIRMADO]
+  tiempo_respuesta: "Le responderemos a la brevedad" # [ASUNCIÓN] docx no confirmó tiempo objetivo (pregunta 4.6 sin marcar)
+  direccion: "Aguayo No. 43, entre Malintzin, Cuauhtémoc y Allende. Col. del Carmen, Coyoacán, Ciudad de México."  # [CONFIRMADO] fuente: flyer "Inscripciones Abiertas"
+  horario_regular: "Lunes a viernes, 07:30 a 14:00 hrs"      # [CONFIRMADO] fuente: flyer "Inscripciones Abiertas"
+  horario_extendido: "Lunes a viernes, 07:30 a 17:30 hrs"    # [CONFIRMADO] fuente: flyer "Inscripciones Abiertas"
+
+nav:
+  cta_texto: "Contáctanos"
+  links:
+    - label: "Inicio"
+      href: "/"
+    - label: "Nosotros"
+      href: "/nosotros"
+    - label: "Maestros"
+      href: "/maestros"
+    - label: "Cursos"
+      href: "/cursos"
+    - label: "Intercambio"
+      href: "/intercambio"
+    - label: "Testimonios"
+      href: "/testimonios"
+    - label: "FAQ"
+      href: "/faq"
+    - label: "Contacto"
+      href: "/contacto"
+
+hero:
+  # [ASUNCIÓN] mensaje central — docx pregunta 5.3 no fue marcada
+  titulo: "Educar para trascender"
+  subtitulo: "Desde 1987 formamos alumnos bilingües en la Ciudad de México, con cursos de idiomas y un programa de intercambio en el extranjero."
+  imagen: "/images/hero/hero-home.jpg"  # [CONFIRMADO] fotografía real del colegio
+  cta_primario:
+    texto: "Conoce nuestros cursos"
+    href: "/cursos"
+  cta_secundario:
+    texto: "Programa de intercambio"
+    href: "/intercambio"
+
+propuestas_valor:
+  - icono: "graduacion"
+    titulo: "Casi 40 años de trayectoria"
+    descripcion: "Fundado en 1987, con experiencia formando generaciones de alumnos bilingües."
+  - icono: "mundo"
+    titulo: "Intercambio en el extranjero"
+    descripcion: "Programa de una semana en Londres o París, con supervisión y actividades culturales."
+  - icono: "familia"
+    titulo: "Atención cercana"
+    descripcion: "Grupos pensados para dar seguimiento personal a cada alumno."
+  - icono: "calendario"
+    titulo: "Formato flexible"
+    descripcion: "Ciclos y horarios adaptados a la disponibilidad de las familias — contáctanos para conocer opciones."
+
+# [CONFIRMADO] idiomas ofrecidos — fuente: flyer "Un Mundo de Idiomas" (8 idiomas,
+# logo real del colegio, cada uno mostrado con un ícono de bandera). Reemplaza
+# la lista de 2 idiomas asumida anteriormente. La copia de venta por idioma es
+# redacción propia (no cita literal del cliente), igual que ya era el caso para
+# Inglés/Francés en la versión anterior.
+# imagen: bandera del país asociado al idioma (flagcdn.com, servicio gratuito
+# de banderas por código ISO), siguiendo el mismo patrón visual que ya usaba
+# el flyer real del cliente. No es fotografía del colegio — es contenido
+# ilustrativo estándar para un catálogo de cursos de idiomas.
+idiomas:
+  - nombre: "Inglés"
+    slug: "ingles"
+    descripcion: "Cursos de inglés para todas las edades, de nivel principiante a avanzado."
+    descripcion_venta: "El inglés abre puertas académicas y profesionales en cualquier campo. Nuestros cursos combinan práctica conversacional con una base gramatical sólida, en grupos pensados para el avance real de cada alumno."
+    imagen: "https://flagcdn.com/w640/gb.png"
+  - nombre: "Francés"
+    slug: "frances"
+    descripcion: "Cursos de francés para todas las edades, de nivel principiante a avanzado."
+    descripcion_venta: "El francés es una lengua de cultura y oportunidad internacional. Preparamos a nuestros alumnos con miras al programa de intercambio en París y a certificaciones internacionales."
+    imagen: "https://flagcdn.com/w640/fr.png"
+  - nombre: "Italiano"
+    slug: "italiano"
+    descripcion: "Cursos de italiano para todas las edades, de nivel principiante a avanzado."
+    descripcion_venta: "El italiano conecta con el arte, la gastronomía y la cultura de Italia. Nuestros cursos desarrollan la comprensión y expresión oral desde los primeros niveles."
+    imagen: "https://flagcdn.com/w640/it.png"
+  - nombre: "Alemán"
+    slug: "aleman"
+    descripcion: "Cursos de alemán para todas las edades, de nivel principiante a avanzado."
+    descripcion_venta: "El alemán es una lengua clave para la ciencia, la ingeniería y el intercambio académico en Europa. Nuestros cursos construyen una base gramatical sólida desde el inicio."
+    imagen: "https://flagcdn.com/w640/de.png"
+  - nombre: "Japonés"
+    slug: "japones"
+    descripcion: "Cursos de japonés para todas las edades, de nivel principiante a avanzado."
+    descripcion_venta: "El japonés abre las puertas a una cultura milenaria y a oportunidades académicas y profesionales en Asia. Nuestros cursos combinan escritura, lectura y conversación."
+    imagen: "https://flagcdn.com/w640/jp.png"
+  - nombre: "Coreano"
+    slug: "coreano"
+    descripcion: "Cursos de coreano para todas las edades, de nivel principiante a avanzado."
+    descripcion_venta: "El coreano conecta con una cultura de creciente influencia global. Nuestros cursos desarrollan la comprensión, habla, lectura y escritura desde cero."
+    imagen: "https://flagcdn.com/w640/kr.png"
+  - nombre: "Chino"
+    slug: "chino"
+    descripcion: "Cursos de chino mandarín para todas las edades, de nivel principiante a avanzado."
+    descripcion_venta: "El chino mandarín es un idioma estratégico para los negocios y el comercio internacional. Nuestros cursos introducen la escritura y la conversación de forma gradual."
+    imagen: "https://flagcdn.com/w640/cn.png"
+  - nombre: "Ruso"
+    slug: "ruso"
+    descripcion: "Cursos de ruso para todas las edades, de nivel principiante a avanzado."
+    descripcion_venta: "El ruso abre las puertas a la literatura, la historia y las oportunidades de intercambio con el mundo de habla rusa. Nuestros cursos parten desde cero hasta niveles avanzados."
+    imagen: "https://flagcdn.com/w640/ru.png"
+
+niveles:  # [ASUNCIÓN] escala CEFR estándar — docx 2.3 no fue marcada
+  - codigo: "A1"
+    nombre: "Principiante"
+  - codigo: "A2"
+    nombre: "Elemental"
+  - codigo: "B1"
+    nombre: "Intermedio"
+  - codigo: "B2"
+    nombre: "Intermedio Alto"
+  - codigo: "C1"
+    nombre: "Avanzado"
+
+orientaciones:  # [ASUNCIÓN] docx 2.4 no fue marcada
+  - titulo: "Escolar / Académico"
+    icono: "libro"
+    descripcion: "Para complementar la educación formal de niños y jóvenes."
+  - titulo: "Preparación para exámenes"
+    icono: "examen"
+    descripcion: "Apoyo dirigido a certificaciones internacionales."
+  - titulo: "Conversacional / Cultural"
+    icono: "conversacion"
+    descripcion: "Para quienes buscan comunicarse con fluidez y confianza."
+
+formato_curso:  # [ASUNCIÓN] docx 2.7 no fue respondida
+  horas_semana: 3
+  duracion_ciclo: "6 meses"
+  max_alumnos: 12
+  modalidad: "Presencial"
+  horarios: "Contáctanos para conocer disponibilidad de grupos"
+  precio_nota: "Escríbenos para conocer costos y opciones de inscripción"
+
+intercambio:
+  titulo: "Programa de Intercambio en el Extranjero"
+  subtitulo: "Una semana de inmersión total"                 # [CONFIRMADO] duración
+  descripcion: "Una semana de inmersión en el idioma y la cultura, en Londres o París."
+  descripcion_larga: "Nuestro programa de intercambio combina clases de idioma, convivencia y excursiones culturales en un entorno supervisado, pensado tanto para adolescentes como para jóvenes adultos."
+  imagen_hero: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=1600"
+  destinos:  # [CONFIRMADO] ciudades, duración y edades por destino — fuente: flyer "Campamento de Verano"
+    - ciudad: "Londres, Reino Unido"
+      edad: "13 a 21 años"
+      imagen: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=800"
+      descripcion: "Una semana de inmersión en inglés, con actividades culturales en la capital británica."
+    - ciudad: "París, Francia"
+      edad: "11 a 17 años"
+      imagen: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800"
+      descripcion: "Una semana de inmersión en francés, con actividades culturales en la Ciudad de la Luz."
+  duracion: "Una semana"  # [CONFIRMADO]
+  incluye:  # [ASUNCIÓN] docx 3.4 no fue marcada — lista estándar de un programa de este tipo
+    - "Alojamiento"
+    - "Clases de idioma en escuela aliada"
+    - "Excursiones culturales"
+    - "Supervisión y guía de grupo"
+    - "Seguro de viaje"
+  puntos_venta:  # [ASUNCIÓN] docx 3.7 no fue respondida
+    - icono: "escudo"
+      titulo: "Supervisión constante"
+      descripcion: "Acompañamiento durante toda la estancia."
+    - icono: "crecimiento"
+      titulo: "Inmersión real"
+      descripcion: "Una semana de práctica intensiva del idioma en su país de origen."
+  cta:
+    texto: "Solicita información del programa"
+    href: "/contacto"
+  urgencia: "Cupo limitado por grupo — contáctanos para conocer fechas disponibles."
+
+# [ASUNCIÓN] pendiente por completo — docx G3 no fue respondida.
+# NO se inventan testimonios con nombres reales (evita prueba social falsa).
+# La página muestra un estado "próximamente" hasta que el cliente
+# proporcione testimonios reales.
+testimonios: []
+
+faq:  # [ASUNCIÓN] docx G8 no fue respondida — preguntas genéricas del sector
+  - pregunta: "¿Los cursos son presenciales o en línea?"
+    respuesta: "Contáctanos para conocer la modalidad disponible para cada curso y grupo."
+  - pregunta: "¿Qué material se necesita para los cursos?"
+    respuesta: "El material se indica al inicio de cada ciclo. Escríbenos si tienes dudas específicas."
+  - pregunta: "¿Cómo funciona el programa de intercambio?"
+    respuesta: "El programa tiene una duración de una semana en Londres o París, con clases de idioma, actividades culturales y supervisión durante toda la estancia."
+  - pregunta: "¿Desde qué edad pueden participar en el programa de intercambio?"
+    respuesta: "El programa está dirigido a alumnos de entre 11 y 21 años, dependiendo del grupo y destino."
+  - pregunta: "¿Cómo me inscribo o pido más información?"
+    respuesta: "Puedes escribirnos por WhatsApp, correo electrónico o a través del formulario de contacto y te responderemos a la brevedad."
+
+nosotros:
+  titulo: "Educar para trascender"  # [CONFIRMADO] slogan reutilizado
+  subtitulo: "Formando alumnos bilingües desde 1987"  # [ASUNCIÓN]
+  descripcion: "El Colegio \"María del Carmen Muriel\" ofrece cursos de idiomas en la Ciudad de México desde 1987."  # combina datos [CONFIRMADO]
+  descripcion_2: "Contáctanos para conocer más sobre nuestra metodología y trayectoria."  # [ASUNCIÓN] docx G10 no fue respondida — se evita inventar metodología específica
+  imagen: "/images/nosotros/nosotros-comunidad.jpg"  # [CONFIRMADO] fotografía real del colegio
+  mision: "Ofrecer educación en idiomas de calidad, accesible para las familias de la Ciudad de México."  # [ASUNCIÓN]
+  vision: "Ser una referencia en la enseñanza de idiomas en la Ciudad de México."  # [ASUNCIÓN]
+  valores:  # [ASUNCIÓN]
+    - "Excelencia académica"
+    - "Atención personalizada"
+    - "Vocación de servicio"
+  # [CONFIRMADO] certificaciones internacionales de inglés — corroborado en 3 flyers
+  # distintos, incluyendo uno con foto real de un alumno en el patio del colegio.
+  acreditaciones:
+    - nombre: "Oxford University Press"
+      descripcion: "Certificaciones internacionales de inglés."
+    - nombre: "Cambridge University Press & Assessment"
+      descripcion: "Certificaciones internacionales de inglés."
+  # [ASUNCIÓN] pendiente — docx G4/nosotros no fue respondida. NO se
+  # inventan cifras de egresados o años de trayectoria más allá del
+  # dato confirmado (fundación 1987). Ver README.md — un flyer real
+  # afirma "más de 60 años de experiencia", inconsistente con 1987;
+  # pendiente de aclarar con el cliente antes de publicar cualquier cifra.
+  logros: []
+
+# [ASUNCIÓN] pendiente por completo — docx G5 no fue respondida.
+# NO se inventan nombres, fotos ni credenciales de maestros reales.
+maestros: []
+
+# [CONFIRMADO] fotografías reales de vida escolar. El nombre de un alumno era
+# legible bordado en dos fotografías fuente — se omite intencionalmente de
+# todo alt text. Consentimiento de padres/tutores para el uso de estas fotos
+# queda pendiente de confirmar con el cliente (ver README.md).
+galeria:
+  - imagen: "/images/galeria/galeria-01-patio-recreo.jpg"
+    alt: "Alumnos jugando en el patio durante el recreo"
+  - imagen: "/images/galeria/galeria-02-comedor.jpg"
+    alt: "Alumnos en el comedor escolar"
+  - imagen: "/images/galeria/galeria-03-parque.jpg"
+    alt: "Alumnos en una salida a un parque"
+  - imagen: "/images/galeria/galeria-04-juegos.jpg"
+    alt: "Alumnos jugando en los juegos infantiles"
+  - imagen: "/images/galeria/galeria-05-asamblea.jpg"
+    alt: "Alumnos reunidos en una asamblea escolar"
+  - imagen: "/images/galeria/galeria-06-dia-profesiones-astronauta.jpg"
+    alt: "Alumna disfrazada de astronauta con un cohete hecho a mano"
+  - imagen: "/images/galeria/galeria-07-dia-profesiones-cantantes.jpg"
+    alt: "Alumnas participando en un día de disfraces temático"
+  - imagen: "/images/galeria/galeria-08-robotica.jpg"
+    alt: "Alumnos armando un proyecto de robótica"
+  - imagen: "/images/galeria/galeria-09-danza-folklorica.jpg"
+    alt: "Alumnos en una presentación de danza folklórica"
+  - imagen: "/images/galeria/galeria-10-capilla.jpg"
+    alt: "Alumnos en una ceremonia en la capilla del colegio"
+
+# [CONFIRMADO] catálogo real de cursos de enriquecimiento (fuente: material
+# promocional del colegio bajo una marca/contacto anteriores; contenido
+# reatribuido a los datos de contacto actuales y confirmados del colegio).
+# Sin fotografía real disponible: el arte de los flyers fuente es
+# ilustración de stock/IA, no fotografía — se deja sin imagen.
+cursos_enriquecimiento:
+  - nombre: "Introducción a Python"
+    slug: "python-intro"
+    icono: "codigo"
+    descripcion: "Aprende programación desde cero. Un primer acercamiento al código, ideal para quienes se inician en la tecnología."
+  - nombre: "Ruta Inicial de Tecnología e IA"
+    slug: "ia-ruta-inicial"
+    icono: "ia"
+    descripcion: "Ciudadanía digital, pensamiento computacional, seguridad digital, aplicaciones de IA e introducción a la inteligencia artificial. Nivel 1 de 3, para Secundaria 1° a 2°."
+  - nombre: "Ruta Intermedia de Inteligencia Artificial"
+    slug: "ia-ruta-intermedia"
+    icono: "ia"
+    descripcion: "IA aplicada, ciberseguridad, IA generativa y herramientas digitales. Nivel 2 de 3, para Secundaria 3° a Prepa 1°."
+  - nombre: "Ruta Avanzada de Inteligencia Artificial"
+    slug: "ia-ruta-avanzada"
+    icono: "ia"
+    descripcion: "Ciencia de datos, ciberseguridad, proyecto tecnológico y portafolio digital. Nivel 3 de 3, para Prepa 2° a 3°."
+  - nombre: "Excel Total"
+    slug: "excel-total"
+    icono: "hoja-calculo"
+    descripcion: "Introducción, manejo de datos, funciones, fórmulas, gráficos, análisis y funciones avanzadas de Microsoft Excel."
+  - nombre: "Aprende Ajedrez"
+    slug: "ajedrez"
+    icono: "ajedrez"
+    descripcion: "De novato a estratega en solo 6 días: apertura, táctica y finales."
+
+formulario:
+  nombre_label: "Nombre completo"
+  email_label: "Correo electrónico"
+  telefono_label: "Teléfono"
+  idioma_label: "Idioma o programa de interés"
+  mensaje_label: "Mensaje"
+  enviar_texto: "Enviar mensaje"
+  placeholder_nombre: "Tu nombre completo"
+  placeholder_email: "tu@correo.com"
+  placeholder_telefono: "55 1234 5678"
+  placeholder_mensaje: "Cuéntanos sobre tus objetivos de aprendizaje o el programa que te interesa..."
+  idioma_placeholder: "Selecciona una opción"
+  idioma_opciones:
+    - "Inglés"
+    - "Francés"
+    - "Italiano"
+    - "Alemán"
+    - "Japonés"
+    - "Coreano"
+    - "Chino"
+    - "Ruso"
+    - "Programa de Intercambio (Londres)"
+    - "Programa de Intercambio (París)"
+    - "Otro"
+  # [ASUNCIÓN] requiere que el cliente cree una cuenta en Formspree
+  # (o servicio equivalente) y sustituya esta URL — ver README.md
+  formspree_url: "https://formspree.io/f/PENDIENTE_CONFIGURAR"
+  nota_privacidad: "Al enviar este formulario, aceptas nuestro"
+  link_privacidad: "aviso de privacidad"
+
+aviso_privacidad:
+  # [ASUNCIÓN] plantilla LFPDPPP adaptada con datos reales del cliente.
+  # docx G7 no fue respondida (no se confirmó si ya cuentan con uno) —
+  # este documento REQUIERE revisión legal antes de publicarse.
+  titulo: "Aviso de Privacidad"
+  fecha_actualizacion: "Pendiente de confirmar"
+  intro: "En cumplimiento con lo dispuesto en la Ley Federal de Protección de Datos Personales en Posesión de los Particulares (LFPDPPP), su Reglamento y los Lineamientos del Aviso de Privacidad, ponemos a su disposición el presente Aviso de Privacidad."
+  responsable_titulo: "Responsable del tratamiento de datos personales"
+  responsable_texto: "Colegio \"María del Carmen Muriel\", con domicilio en Ciudad de México, México, es responsable del uso y protección de sus datos personales."
+  datos_titulo: "Datos personales que recabamos"
+  datos_items:
+    - "Nombre completo"
+    - "Correo electrónico"
+    - "Número de teléfono"
+    - "Información sobre objetivos de aprendizaje"
+    - "Datos de menores de edad (cuando aplique, con consentimiento de padre/tutor)"
+  finalidades_titulo: "Finalidades del tratamiento"
+  finalidades_primarias:
+    - "Contactarle para brindar información sobre nuestros cursos y servicios"
+    - "Gestionar su inscripción y seguimiento académico"
+    - "Administrar el programa de intercambio en el extranjero"
+  finalidades_secundarias:
+    - "Enviarle información sobre nuevos programas y actividades de la escuela"
+  transferencias_titulo: "Transferencias de datos"
+  transferencias_texto: "No realizaremos transferencias de datos personales a terceros sin su consentimiento, salvo las excepciones previstas en el artículo 37 de la LFPDPPP."
+  derechos_titulo: "Derechos ARCO"
+  derechos_texto: "Usted tiene derecho a Acceder, Rectificar, Cancelar u Oponerse (derechos ARCO) al tratamiento de sus datos personales. Para ejercer estos derechos, puede enviar una solicitud a nuestro correo electrónico, indicando: nombre completo, datos a rectificar/cancelar, documentación que acredite su identidad y motivo de la solicitud."
+  cambios_titulo: "Cambios al aviso de privacidad"
+  cambios_texto: "Nos reservamos el derecho de efectuar modificaciones o actualizaciones al presente aviso de privacidad. Dichas modificaciones estarán disponibles en nuestro sitio web."
+
+seo:
+  # [ASUNCIÓN] docx G1 no fue respondida — palabras clave razonables
+  # para el giro y ciudad confirmados; validar intención de búsqueda real.
+  titulo_sitio: "Colegio María del Carmen Muriel | Cursos de Idiomas CDMX"
+  descripcion_sitio: "Colegio en la Ciudad de México, fundado en 1987. Cursos de inglés y francés, y programa de intercambio en Londres y París."
+  palabras_clave:
+    - "cursos de idiomas CDMX"
+    - "escuela de inglés Ciudad de México"
+    - "curso de francés CDMX"
+    - "intercambio estudiantil Londres"
+    - "intercambio estudiantil París"

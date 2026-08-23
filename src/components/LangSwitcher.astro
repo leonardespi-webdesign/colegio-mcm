@@ -1,0 +1,27 @@
+---
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import { LANGS, type Lang } from '../i18n/content';
+
+interface Props {
+  lang: Lang;
+  path: string; // locale-agnostic current path
+}
+
+const { lang, path } = Astro.props;
+const labels: Record<Lang, string> = { es: 'ES', en: 'EN' };
+---
+
+<div class="flex items-center gap-1 text-sm font-medium" aria-label="Selector de idioma">
+  {LANGS.map((l, i) => (
+    <>
+      {i > 0 && <span class="text-neutral-300">/</span>}
+      <a
+        href={getRelativeLocaleUrl(l, path)}
+        class={`rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary ${l === lang ? 'text-primary' : 'text-neutral-500 hover:text-primary'}`}
+        aria-current={l === lang ? 'true' : undefined}
+      >
+        {labels[l]}
+      </a>
+    </>
+  ))}
+</div>

@@ -1,0 +1,34 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import TeacherCard from '../TeacherCard.astro';
+import { getContent, type Lang } from '../../i18n/content';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const { maestros } = getContent(lang);
+const title = lang === 'es' ? 'Nuestros Maestros' : 'Our Teachers';
+const emptyState = lang === 'es'
+  ? 'Estamos preparando los perfiles de nuestro equipo docente. Vuelve pronto para conocerlos.'
+  : "We're preparing our teaching team's profiles. Check back soon to meet them.";
+---
+
+<BaseLayout lang={lang} path="/maestros" title={title}>
+  <section class="section-padding">
+    <div class="container-base">
+      <h1 class="font-heading text-3xl font-bold text-primary text-center">{title}</h1>
+
+      {maestros.length === 0 ? (
+        <p class="mt-8 text-center text-neutral-500 max-w-xl mx-auto">{emptyState}</p>
+      ) : (
+        <div class="mt-10 grid gap-6 md:grid-cols-3">
+          {maestros.map((m) => (
+            <TeacherCard nombre={m.nombre} rol={m.rol} foto={m.foto} credenciales={m.credenciales} />
+          ))}
+        </div>
+      )}
+    </div>
+  </section>
+</BaseLayout>

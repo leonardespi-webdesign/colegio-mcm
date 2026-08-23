@@ -1,0 +1,41 @@
+---
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getContent, type Lang } from '../../i18n/content';
+import { asset } from '../../utils/url';
+
+interface Props {
+  lang: Lang;
+  slug: string;
+}
+
+const { lang, slug } = Astro.props;
+const { idiomas, niveles, formato_curso } = getContent(lang);
+const idioma = idiomas.find((i) => i.slug === slug)!;
+const contactHref = getRelativeLocaleUrl(lang, '/contacto');
+---
+
+<BaseLayout lang={lang} path={`/cursos/${slug}`} title={idioma.nombre} description={idioma.descripcion}>
+  <section class="section-padding">
+    <div class="container-base grid gap-10 md:grid-cols-2 items-center">
+      <div>
+        <h1 class="font-heading text-3xl font-bold text-primary">{idioma.nombre}</h1>
+        <p class="mt-4 text-neutral-700">{idioma.descripcion_venta}</p>
+
+        <ul class="mt-6 text-sm text-neutral-600 space-y-1">
+          <li>{lang === 'es' ? 'Niveles' : 'Levels'}: {niveles.map((n) => n.codigo).join(' – ')}</li>
+          <li>{formato_curso.horas_semana} {lang === 'es' ? 'hrs/semana' : 'hrs/week'} · {formato_curso.duracion_ciclo}</li>
+          <li>{lang === 'es' ? 'Máx.' : 'Max.'} {formato_curso.max_alumnos} {lang === 'es' ? 'alumnos por grupo' : 'students per group'}</li>
+        </ul>
+
+        <a href={contactHref} class="btn-primary mt-8 inline-block">
+          {lang === 'es' ? 'Solicita información' : 'Request information'}
+        </a>
+      </div>
+      <div class="relative h-80 w-full overflow-hidden rounded-2xl shadow-[0_24px_48px_-24px_rgba(30,58,95,0.5)]">
+        <img src={asset(idioma.imagen)} alt={idioma.nombre} class="h-full w-full object-cover" loading="lazy" />
+        <div class="absolute inset-0 bg-gradient-to-t from-primary/25 via-primary/0 to-primary/0"></div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,371 @@
+# ============================================================
+# EDITABLE CONTENT FILE — COLEGIO MARÍA DEL CARMEN MURIEL (EN)
+# Mirrors content.es.yml — same schema, English copy.
+#
+# LEGEND:
+#   [CONFIRMED]   real data from the client questionnaire
+#   [ASSUMPTION]  reasonable placeholder-free copy, pending validation
+#                 with Rosa Valladares before publishing
+# The original questionnaire came back almost empty — most of this
+# file is [ASSUMPTION]. See README.md for the full pending-items list.
+# ============================================================
+
+escuela:
+  nombre: "Colegio \"María del Carmen Muriel\""   # [CONFIRMED]
+  slogan: "Educate to transcend"                   # [ASSUMPTION] EN translation of confirmed ES slogan
+  fundacion: 1987                                  # [CONFIRMED]
+  ciudad: "Mexico City"                            # [CONFIRMED]
+
+contacto:
+  email_principal: "inf.colegiomariadelcarmenmuriel@gmail.com"  # [CONFIRMED]
+  telefono_display: "+52 55 5659 9322"                            # [CONFIRMED]
+  telefono_tel: "+525556599322"                                   # [CONFIRMED]
+  whatsapp: "525556599322"              # [ASSUMPTION] assumes same number is WhatsApp-enabled — confirm with client
+  whatsapp_display: "+52 55 5659 9322"
+  contacto_nombre: "Rosa Valladares Solano"        # [CONFIRMED]
+  contacto_puesto: "General Director"              # [CONFIRMED]
+  tiempo_respuesta: "We will get back to you shortly" # [ASSUMPTION]
+  direccion: "Aguayo No. 43, between Malintzin, Cuauhtémoc and Allende. Col. del Carmen, Coyoacán, Mexico City."  # [CONFIRMED] source: "Inscripciones Abiertas" flyer
+  horario_regular: "Monday to Friday, 7:30 AM to 2:00 PM"      # [CONFIRMED] source: "Inscripciones Abiertas" flyer
+  horario_extendido: "Monday to Friday, 7:30 AM to 5:30 PM"    # [CONFIRMED] source: "Inscripciones Abiertas" flyer
+
+nav:
+  cta_texto: "Contact us"
+  links:
+    - label: "Home"
+      href: "/"
+    - label: "About"
+      href: "/nosotros"
+    - label: "Teachers"
+      href: "/maestros"
+    - label: "Courses"
+      href: "/cursos"
+    - label: "Exchange"
+      href: "/intercambio"
+    - label: "Testimonials"
+      href: "/testimonios"
+    - label: "FAQ"
+      href: "/faq"
+    - label: "Contact"
+      href: "/contacto"
+
+hero:
+  # [ASSUMPTION] core message — questionnaire 5.3 was left unmarked
+  titulo: "Educate to transcend"
+  subtitulo: "Since 1987 we have trained bilingual students in Mexico City, offering language courses and an international exchange program."
+  imagen: "/images/hero/hero-home.jpg"  # [CONFIRMED] real photograph of the school
+  cta_primario:
+    texto: "See our courses"
+    href: "/cursos"
+  cta_secundario:
+    texto: "Exchange program"
+    href: "/intercambio"
+
+propuestas_valor:
+  - icono: "graduacion"
+    titulo: "Nearly 40 years of experience"
+    descripcion: "Founded in 1987, with a track record of training generations of bilingual students."
+  - icono: "mundo"
+    titulo: "International exchange program"
+    descripcion: "A one-week program in London or Paris, with supervision and cultural activities."
+  - icono: "familia"
+    titulo: "Personal attention"
+    descripcion: "Groups designed to give each student close, personal follow-up."
+  - icono: "calendario"
+    titulo: "Flexible format"
+    descripcion: "Cycles and schedules adapted to families' availability — contact us to learn more."
+
+# [CONFIRMED] languages offered — source: "Un Mundo de Idiomas" flyer (8
+# languages, real school logo, each shown with a flag icon). Replaces the
+# previously assumed 2-language list. Per-language sales copy is original
+# writing (not a literal client quote), same as English/French already were
+# in the prior version.
+# imagen: the flag of the language's associated country (flagcdn.com, a free
+# ISO-code flag service), following the same visual pattern the client's own
+# real flyer already used. Not a photo of the school — standard illustrative
+# content for a language-course catalog.
+idiomas:
+  - nombre: "English"
+    slug: "ingles"
+    descripcion: "English courses for all ages, from beginner to advanced level."
+    descripcion_venta: "English opens academic and professional doors in any field. Our courses combine conversational practice with a solid grammar foundation, in groups designed for real progress."
+    imagen: "https://flagcdn.com/w640/gb.png"
+  - nombre: "French"
+    slug: "frances"
+    descripcion: "French courses for all ages, from beginner to advanced level."
+    descripcion_venta: "French is a language of culture and international opportunity. We prepare our students for the Paris exchange program and for international certifications."
+    imagen: "https://flagcdn.com/w640/fr.png"
+  - nombre: "Italian"
+    slug: "italiano"
+    descripcion: "Italian courses for all ages, from beginner to advanced level."
+    descripcion_venta: "Italian connects students with the art, cuisine, and culture of Italy. Our courses build listening and speaking skills from the very first levels."
+    imagen: "https://flagcdn.com/w640/it.png"
+  - nombre: "German"
+    slug: "aleman"
+    descripcion: "German courses for all ages, from beginner to advanced level."
+    descripcion_venta: "German is a key language for science, engineering, and academic exchange in Europe. Our courses build a solid grammar foundation from day one."
+    imagen: "https://flagcdn.com/w640/de.png"
+  - nombre: "Japanese"
+    slug: "japones"
+    descripcion: "Japanese courses for all ages, from beginner to advanced level."
+    descripcion_venta: "Japanese opens the door to a rich cultural tradition and to academic and professional opportunities across Asia. Our courses combine writing, reading, and conversation."
+    imagen: "https://flagcdn.com/w640/jp.png"
+  - nombre: "Korean"
+    slug: "coreano"
+    descripcion: "Korean courses for all ages, from beginner to advanced level."
+    descripcion_venta: "Korean connects students with a culture of growing global influence. Our courses build listening, speaking, reading, and writing skills from scratch."
+    imagen: "https://flagcdn.com/w640/kr.png"
+  - nombre: "Chinese"
+    slug: "chino"
+    descripcion: "Mandarin Chinese courses for all ages, from beginner to advanced level."
+    descripcion_venta: "Mandarin Chinese is a strategic language for international business and trade. Our courses introduce writing and conversation gradually."
+    imagen: "https://flagcdn.com/w640/cn.png"
+  - nombre: "Russian"
+    slug: "ruso"
+    descripcion: "Russian courses for all ages, from beginner to advanced level."
+    descripcion_venta: "Russian opens the door to literature, history, and exchange opportunities with the Russian-speaking world. Our courses go from complete beginner to advanced levels."
+    imagen: "https://flagcdn.com/w640/ru.png"
+
+niveles:  # [ASSUMPTION] standard CEFR scale — questionnaire 2.3 was left unmarked
+  - codigo: "A1"
+    nombre: "Beginner"
+  - codigo: "A2"
+    nombre: "Elementary"
+  - codigo: "B1"
+    nombre: "Intermediate"
+  - codigo: "B2"
+    nombre: "Upper Intermediate"
+  - codigo: "C1"
+    nombre: "Advanced"
+
+orientaciones:  # [ASSUMPTION] questionnaire 2.4 was left unmarked
+  - titulo: "Academic"
+    icono: "libro"
+    descripcion: "To complement children's and teens' formal education."
+  - titulo: "Exam preparation"
+    icono: "examen"
+    descripcion: "Support aimed at international certifications."
+  - titulo: "Conversational / Cultural"
+    icono: "conversacion"
+    descripcion: "For those seeking fluency and confidence."
+
+formato_curso:  # [ASSUMPTION] questionnaire 2.7 was left unanswered
+  horas_semana: 3
+  duracion_ciclo: "6 months"
+  max_alumnos: 12
+  modalidad: "In person"
+  horarios: "Contact us to check group availability"
+  precio_nota: "Write to us to learn about costs and enrollment options"
+
+intercambio:
+  titulo: "International Exchange Program"
+  subtitulo: "One week of full immersion"                 # [CONFIRMED] duration
+  descripcion: "One week of language and cultural immersion, in London or Paris."
+  descripcion_larga: "Our exchange program combines language classes, group living, and cultural excursions in a supervised setting, designed for both teenagers and young adults."
+  imagen_hero: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=1600"
+  destinos:  # [CONFIRMED] cities, duration, and per-destination ages — source: "Campamento de Verano" flyer
+    - ciudad: "London, United Kingdom"
+      edad: "13 to 21 years old"
+      imagen: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=800"
+      descripcion: "One week of English immersion, with cultural activities in the British capital."
+    - ciudad: "Paris, France"
+      edad: "11 to 17 years old"
+      imagen: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800"
+      descripcion: "One week of French immersion, with cultural activities in the City of Light."
+  duracion: "One week"  # [CONFIRMED]
+  incluye:  # [ASSUMPTION] questionnaire 3.4 was left unmarked — standard list for this type of program
+    - "Accommodation"
+    - "Language classes at a partner school"
+    - "Cultural excursions"
+    - "Group supervision and guidance"
+    - "Travel insurance"
+  puntos_venta:  # [ASSUMPTION] questionnaire 3.7 was left unanswered
+    - icono: "escudo"
+      titulo: "Constant supervision"
+      descripcion: "Support throughout the entire stay."
+    - icono: "crecimiento"
+      titulo: "Real immersion"
+      descripcion: "One week of intensive language practice in a native-speaking country."
+  cta:
+    texto: "Request program information"
+    href: "/contacto"
+  urgencia: "Limited spots per group — contact us for available dates."
+
+# [ASSUMPTION] entirely pending — questionnaire G3 was left unanswered.
+# Real-named testimonials are NOT fabricated (avoids fake social proof).
+# The page shows a "coming soon" state until the client provides real ones.
+testimonios: []
+
+faq:  # [ASSUMPTION] questionnaire G8 was left unanswered — generic industry questions
+  - pregunta: "Are courses in person or online?"
+    respuesta: "Contact us to learn about the format available for each course and group."
+  - pregunta: "What materials do I need for the courses?"
+    respuesta: "Materials are shared at the start of each cycle. Write to us with any specific questions."
+  - pregunta: "How does the exchange program work?"
+    respuesta: "The program runs for one week in London or Paris, including language classes, cultural activities, and supervision throughout the stay."
+  - pregunta: "What is the minimum age to join the exchange program?"
+    respuesta: "The program is aimed at students between 11 and 21 years old, depending on the group and destination."
+  - pregunta: "How do I enroll or ask for more information?"
+    respuesta: "You can write to us on WhatsApp, by email, or through the contact form, and we will get back to you shortly."
+
+nosotros:
+  titulo: "Educate to transcend"  # [ASSUMPTION] reused slogan translation
+  subtitulo: "Training bilingual students since 1987"  # [ASSUMPTION]
+  descripcion: "Colegio \"María del Carmen Muriel\" has offered language courses in Mexico City since 1987."  # combines [CONFIRMED] data
+  descripcion_2: "Contact us to learn more about our teaching approach and track record."  # [ASSUMPTION] questionnaire G10 unanswered — a specific methodology is not invented
+  imagen: "/images/nosotros/nosotros-comunidad.jpg"  # [CONFIRMED] real photograph of the school
+  mision: "To provide quality, accessible language education for families in Mexico City."  # [ASSUMPTION]
+  vision: "To be a reference point for language education in Mexico City."  # [ASSUMPTION]
+  valores:  # [ASSUMPTION]
+    - "Academic excellence"
+    - "Personalized attention"
+    - "A genuine commitment to service"
+  # [CONFIRMED] international English-language certifications — corroborated
+  # across 3 separate flyers, including one with a real photo of a real
+  # student in the school's courtyard.
+  acreditaciones:
+    - nombre: "Oxford University Press"
+      descripcion: "International English-language certifications."
+    - nombre: "Cambridge University Press & Assessment"
+      descripcion: "International English-language certifications."
+  # [ASSUMPTION] pending — questionnaire G4/nosotros unanswered. Alumni
+  # counts or years-in-business figures beyond the confirmed founding
+  # year (1987) are NOT invented. See README.md — a real flyer claims
+  # "more than 60 years of experience," inconsistent with 1987; pending
+  # clarification with the client before publishing any figure.
+  logros: []
+
+# [ASSUMPTION] entirely pending — questionnaire G5 was left unanswered.
+# Real teacher names, photos, or credentials are NOT fabricated.
+maestros: []
+
+# [CONFIRMED] real school-life photographs. One student's name was legible,
+# embroidered on the uniform, in two source photos — intentionally omitted
+# from every alt text. Parental consent for using these photos is still
+# pending confirmation with the client (see README.md).
+galeria:
+  - imagen: "/images/galeria/galeria-01-patio-recreo.jpg"
+    alt: "Students playing in the courtyard during recess"
+  - imagen: "/images/galeria/galeria-02-comedor.jpg"
+    alt: "Students in the school cafeteria"
+  - imagen: "/images/galeria/galeria-03-parque.jpg"
+    alt: "Students on a park outing"
+  - imagen: "/images/galeria/galeria-04-juegos.jpg"
+    alt: "Students playing on the playground"
+  - imagen: "/images/galeria/galeria-05-asamblea.jpg"
+    alt: "Students gathered for a school assembly"
+  - imagen: "/images/galeria/galeria-06-dia-profesiones-astronauta.jpg"
+    alt: "Student dressed as an astronaut with a handmade rocket"
+  - imagen: "/images/galeria/galeria-07-dia-profesiones-cantantes.jpg"
+    alt: "Students taking part in a costume theme day"
+  - imagen: "/images/galeria/galeria-08-robotica.jpg"
+    alt: "Students building a robotics project"
+  - imagen: "/images/galeria/galeria-09-danza-folklorica.jpg"
+    alt: "Students performing a traditional folk dance"
+  - imagen: "/images/galeria/galeria-10-capilla.jpg"
+    alt: "Students in a ceremony at the school chapel"
+
+# [CONFIRMED] real enrichment-course catalog (source: school promotional
+# material under a prior brand/contact; content re-attributed to the
+# school's current, confirmed contact details). No real photography
+# available: the source flyer art is stock/AI illustration, not
+# photography — left image-less.
+cursos_enriquecimiento:
+  - nombre: "Python Introduction"
+    slug: "python-intro"
+    icono: "codigo"
+    descripcion: "Learn programming from scratch. A first step into code, ideal for students starting out in technology."
+  - nombre: "AI & Technology Starter Track"
+    slug: "ia-ruta-inicial"
+    icono: "ia"
+    descripcion: "Digital citizenship, computational thinking, digital safety, AI applications, and an introduction to artificial intelligence. Level 1 of 3, for Secondary 1st to 2nd grade."
+  - nombre: "AI Intermediate Track"
+    slug: "ia-ruta-intermedia"
+    icono: "ia"
+    descripcion: "Applied AI, cybersecurity, generative AI, and digital tools. Level 2 of 3, for Secondary 3rd grade to Prep 1st grade."
+  - nombre: "AI Advanced Track"
+    slug: "ia-ruta-avanzada"
+    icono: "ia"
+    descripcion: "Data science, cybersecurity, a technology project, and a digital portfolio. Level 3 of 3, for Prep 2nd to 3rd grade."
+  - nombre: "Excel Total"
+    slug: "excel-total"
+    icono: "hoja-calculo"
+    descripcion: "Introduction, data handling, functions, formulas, charts, analysis, and advanced Microsoft Excel features."
+  - nombre: "Learn Chess"
+    slug: "ajedrez"
+    icono: "ajedrez"
+    descripcion: "From beginner to strategist in just 6 days: openings, tactics, and endgames."
+
+formulario:
+  nombre_label: "Full name"
+  email_label: "Email"
+  telefono_label: "Phone"
+  idioma_label: "Language or program of interest"
+  mensaje_label: "Message"
+  enviar_texto: "Send message"
+  placeholder_nombre: "Your full name"
+  placeholder_email: "you@email.com"
+  placeholder_telefono: "55 1234 5678"
+  placeholder_mensaje: "Tell us about your learning goals or the program you're interested in..."
+  idioma_placeholder: "Select an option"
+  idioma_opciones:
+    - "English"
+    - "French"
+    - "Italian"
+    - "German"
+    - "Japanese"
+    - "Korean"
+    - "Chinese"
+    - "Russian"
+    - "Exchange Program (London)"
+    - "Exchange Program (Paris)"
+    - "Other"
+  # [ASSUMPTION] requires the client to create a Formspree account (or
+  # equivalent) and replace this URL — see README.md
+  formspree_url: "https://formspree.io/f/PENDIENTE_CONFIGURAR"
+  nota_privacidad: "By submitting this form, you agree to our"
+  link_privacidad: "privacy notice"
+
+aviso_privacidad:
+  # [ASSUMPTION] LFPDPPP-style template adapted with the client's real
+  # data, translated for informational purposes. The Spanish version is
+  # the legally authoritative one for Mexico. Questionnaire G7 was left
+  # unanswered — this document REQUIRES legal review before publishing.
+  titulo: "Privacy Notice"
+  fecha_actualizacion: "Pending confirmation"
+  intro: "In compliance with the Mexican Federal Law on Protection of Personal Data Held by Private Parties (LFPDPPP), its Regulations, and the Privacy Notice Guidelines, we make this Privacy Notice available to you."
+  responsable_titulo: "Party responsible for processing personal data"
+  responsable_texto: "Colegio \"María del Carmen Muriel\", located in Mexico City, Mexico, is responsible for the use and protection of your personal data."
+  datos_titulo: "Personal data we collect"
+  datos_items:
+    - "Full name"
+    - "Email address"
+    - "Phone number"
+    - "Information about learning goals"
+    - "Minors' data (where applicable, with parent/guardian consent)"
+  finalidades_titulo: "Purposes of processing"
+  finalidades_primarias:
+    - "Contacting you with information about our courses and services"
+    - "Managing your enrollment and academic follow-up"
+    - "Administering the international exchange program"
+  finalidades_secundarias:
+    - "Sending you information about new programs and school activities"
+  transferencias_titulo: "Data transfers"
+  transferencias_texto: "We will not transfer personal data to third parties without your consent, except as provided under Article 37 of the LFPDPPP."
+  derechos_titulo: "ARCO Rights"
+  derechos_texto: "You have the right to Access, Rectify, Cancel, or Object (ARCO rights) to the processing of your personal data. To exercise these rights, you may send a request to our email, indicating: full name, data to be rectified/cancelled, identity verification, and reason for the request."
+  cambios_titulo: "Changes to this privacy notice"
+  cambios_texto: "We reserve the right to make changes or updates to this privacy notice. Such changes will be made available on our website."
+
+seo:
+  # [ASSUMPTION] questionnaire G1 was left unanswered — reasonable
+  # keywords for the confirmed business type and city; validate real
+  # search intent with the client.
+  titulo_sitio: "Colegio María del Carmen Muriel | Language Courses Mexico City"
+  descripcion_sitio: "A school in Mexico City, founded in 1987. English and French courses, and an exchange program in London and Paris."
+  palabras_clave:
+    - "language courses Mexico City"
+    - "English school Mexico City"
+    - "French course CDMX"
+    - "student exchange London"
+    - "student exchange Paris"

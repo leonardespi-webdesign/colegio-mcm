@@ -1,0 +1,13 @@
+---
+import CursoDetalle from '../../components/pages/CursoDetalle.astro';
+import { getContent } from '../../i18n/content';
+
+export function getStaticPaths() {
+  const { idiomas } = getContent('es');
+  return idiomas.map((idioma) => ({ params: { idioma: idioma.slug } }));
+}
+
+const { idioma } = Astro.params;
+---
+
+<CursoDetalle lang="es" slug={idioma} />

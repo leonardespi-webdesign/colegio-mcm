@@ -1,0 +1,85 @@
+---
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CourseCard from '../CourseCard.astro';
+import Icon from '../Icon.astro';
+import { getContent, type Lang } from '../../i18n/content';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const { idiomas, niveles, orientaciones, formato_curso, cursos_enriquecimiento } = getContent(lang);
+const title = lang === 'es' ? 'Catálogo de Cursos' : 'Course Catalog';
+const contactHref = getRelativeLocaleUrl(lang, '/contacto');
+---
+
+<BaseLayout lang={lang} path="/cursos" title={title}>
+  <section class="section-padding">
+    <div class="container-base">
+      <h1 class="font-heading text-3xl font-bold text-primary text-center">{title}</h1>
+      <div class="mt-10 grid gap-6 sm:grid-cols-2 max-w-2xl mx-auto">
+        {idiomas.map((idioma) => (
+          <CourseCard lang={lang} nombre={idioma.nombre} slug={idioma.slug} descripcion={idioma.descripcion} imagen={idioma.imagen} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding bg-secondary">
+    <div class="container-base grid gap-10 md:grid-cols-3">
+      <div>
+        <h2 class="font-heading font-semibold text-primary">{lang === 'es' ? 'Niveles' : 'Levels'}</h2>
+        <ul class="mt-2 text-sm text-neutral-600 space-y-1">
+          {niveles.map((n) => <li>{n.codigo} — {n.nombre}</li>)}
+        </ul>
+      </div>
+      <div>
+        <h2 class="font-heading font-semibold text-primary">{lang === 'es' ? 'Orientaciones' : 'Tracks'}</h2>
+        <ul class="mt-2 text-sm text-neutral-600 space-y-2">
+          {orientaciones.map((o) => (
+            <li class="flex items-center gap-2">
+              <Icon name={o.icono} class="h-4 w-4 shrink-0 text-primary" />
+              {o.titulo}
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <h2 class="font-heading font-semibold text-primary">{lang === 'es' ? 'Formato' : 'Format'}</h2>
+        <ul class="mt-2 text-sm text-neutral-600 space-y-1">
+          <li>{formato_curso.horas_semana} {lang === 'es' ? 'hrs/semana' : 'hrs/week'}</li>
+          <li>{formato_curso.duracion_ciclo}</li>
+          <li>{lang === 'es' ? 'Máx.' : 'Max.'} {formato_curso.max_alumnos} {lang === 'es' ? 'alumnos' : 'students'}</li>
+          <li>{formato_curso.modalidad}</li>
+          <li>{formato_curso.precio_nota}</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  {cursos_enriquecimiento.length > 0 && (
+    <section class="section-padding bg-secondary">
+      <div class="container-base">
+        <h2 class="font-heading text-2xl font-bold text-primary text-center">
+          {lang === 'es' ? 'Cursos de Enriquecimiento' : 'Enrichment Courses'}
+        </h2>
+        <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {cursos_enriquecimiento.map((curso) => (
+            <a
+              href={contactHref}
+              class="block rounded-2xl bg-white p-5 shadow-[0_2px_10px_-4px_rgba(30,58,95,0.15)] transition-shadow hover:shadow-[0_16px_32px_-16px_rgba(30,58,95,0.35)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+            >
+              <div class="flex h-12 w-12 items-center justify-center rounded-full bg-secondary text-primary">
+                <Icon name={curso.icono} class="h-6 w-6" />
+              </div>
+              <h3 class="mt-4 font-heading text-lg font-semibold text-primary">{curso.nombre}</h3>
+              <p class="mt-1 text-sm text-neutral-600">{curso.descripcion}</p>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+</BaseLayout>

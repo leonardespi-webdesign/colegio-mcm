@@ -1,0 +1,52 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ContactForm from '../ContactForm.astro';
+import { getContent, type Lang } from '../../i18n/content';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const { contacto } = getContent(lang);
+const title = lang === 'es' ? 'Contacto' : 'Contact';
+---
+
+<BaseLayout lang={lang} path="/contacto" title={title}>
+  <section class="section-padding">
+    <div class="container-base grid gap-12 md:grid-cols-2">
+      <div>
+        <h1 class="font-heading text-3xl font-bold text-primary">{title}</h1>
+        <p class="mt-4 text-neutral-700">{contacto.tiempo_respuesta}</p>
+
+        <dl class="mt-6 space-y-3 text-neutral-700">
+          <div>
+            <dt class="text-sm text-neutral-500">{lang === 'es' ? 'Correo' : 'Email'}</dt>
+            <dd><a href={`mailto:${contacto.email_principal}`} class="text-primary hover:underline">{contacto.email_principal}</a></dd>
+          </div>
+          <div>
+            <dt class="text-sm text-neutral-500">{lang === 'es' ? 'Teléfono' : 'Phone'}</dt>
+            <dd><a href={`tel:${contacto.telefono_tel}`} class="text-primary hover:underline">{contacto.telefono_display}</a></dd>
+          </div>
+          <div>
+            <dt class="text-sm text-neutral-500">{lang === 'es' ? 'Atención' : 'Contact'}</dt>
+            <dd>{contacto.contacto_nombre} — {contacto.contacto_puesto}</dd>
+          </div>
+          <div>
+            <dt class="text-sm text-neutral-500">{lang === 'es' ? 'Dirección' : 'Address'}</dt>
+            <dd>{contacto.direccion}</dd>
+          </div>
+          <div>
+            <dt class="text-sm text-neutral-500">{lang === 'es' ? 'Horario' : 'Hours'}</dt>
+            <dd>{contacto.horario_regular}</dd>
+            <dd class="text-sm text-neutral-500">
+              {lang === 'es' ? 'Horario extendido' : 'Extended hours'}: {contacto.horario_extendido}
+            </dd>
+          </div>
+        </dl>
+      </div>
+
+      <ContactForm lang={lang} />
+    </div>
+  </section>
+</BaseLayout>

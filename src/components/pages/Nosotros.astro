@@ -1,0 +1,82 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getContent, type Lang } from '../../i18n/content';
+import { asset } from '../../utils/url';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const { nosotros, galeria } = getContent(lang);
+---
+
+<BaseLayout lang={lang} path="/nosotros" title={nosotros.titulo}>
+  <section class="section-padding">
+    <div class="container-base grid gap-10 md:grid-cols-2 items-center">
+      <div>
+        <h1 class="font-heading text-3xl font-bold text-primary">{nosotros.titulo}</h1>
+        <p class="mt-2 text-lg text-neutral-600">{nosotros.subtitulo}</p>
+        <p class="mt-6 text-neutral-700">{nosotros.descripcion}</p>
+        <p class="mt-4 text-neutral-700">{nosotros.descripcion_2}</p>
+      </div>
+      <img src={asset(nosotros.imagen)} alt={nosotros.titulo} class="rounded-2xl w-full h-80 object-cover" loading="lazy" />
+    </div>
+  </section>
+
+  <section class="section-padding bg-secondary">
+    <div class="container-base grid gap-8 md:grid-cols-2">
+      <div>
+        <h2 class="font-heading text-xl font-semibold text-primary">{lang === 'es' ? 'Misión' : 'Mission'}</h2>
+        <p class="mt-2 text-neutral-700">{nosotros.mision}</p>
+      </div>
+      <div>
+        <h2 class="font-heading text-xl font-semibold text-primary">{lang === 'es' ? 'Visión' : 'Vision'}</h2>
+        <p class="mt-2 text-neutral-700">{nosotros.vision}</p>
+      </div>
+    </div>
+  </section>
+
+  {nosotros.valores.length > 0 && (
+    <section class="section-padding">
+      <div class="container-base">
+        <h2 class="font-heading text-xl font-semibold text-primary text-center">
+          {lang === 'es' ? 'Nuestros valores' : 'Our values'}
+        </h2>
+        <ul class="mt-6 flex flex-wrap justify-center gap-4">
+          {nosotros.valores.map((v) => (
+            <li class="rounded-full bg-secondary px-4 py-2 text-sm font-medium text-primary">{v}</li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  )}
+
+  {nosotros.acreditaciones.length > 0 && (
+    <section class="section-padding bg-secondary">
+      <div class="container-base grid gap-6 md:grid-cols-3">
+        {nosotros.acreditaciones.map((a) => (
+          <div>
+            <h3 class="font-heading font-semibold text-primary">{a.nombre}</h3>
+            <p class="mt-1 text-sm text-neutral-600">{a.descripcion}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  )}
+
+  {galeria.length > 0 && (
+    <section class="section-padding">
+      <div class="container-base">
+        <h2 class="font-heading text-xl font-semibold text-primary text-center">
+          {lang === 'es' ? 'Vida escolar' : 'School life'}
+        </h2>
+        <div class="mt-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+          {galeria.map((g) => (
+            <img src={asset(g.imagen)} alt={g.alt} class="aspect-square w-full rounded-xl object-cover" loading="lazy" />
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+</BaseLayout>
