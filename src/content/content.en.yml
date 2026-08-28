@@ -36,6 +36,8 @@ nav:
       href: "/"
     - label: "About"
       href: "/nosotros"
+    - label: "Educational Levels"
+      href: "/niveles-educativos"
     - label: "Teachers"
       href: "/maestros"
     - label: "Courses"
@@ -191,6 +193,34 @@ intercambio:
     href: "/contacto"
   urgencia: "Limited spots per group — contact us for available dates."
 
+# [CONFIRMED] primary educational level — CCT, shift, and school type come
+# from the public SEP registry. The highlights (daily English, small groups,
+# regional dance, catechism/values, Cambridge certification on graduating)
+# come from direct knowledge of the school, not a flyer — same sourcing
+# standard as the rest of the site's [CONFIRMED] content.
+# Preschool (CCT 09PJN5649X) is intentionally omitted: recent sources
+# suggest it may be inactive in 2026 — see README.md pending item #12
+# before adding it here.
+# 2022-2023 enrollment figures (112 students, 6 groups) are NOT published —
+# they are from a past cycle, not a current figure.
+niveles_educativos:
+  titulo: "Educational Levels"
+  subtitulo: "Primary school with close attention"
+  intro: "Colegio \"María del Carmen Muriel\" offers private primary education, with small groups and well-rounded formation."
+  niveles:
+    - nombre: "Primary"
+      cct: "09PPR0301P"       # [CONFIRMED] source: public SEP registry
+      turno: "Morning shift"  # [CONFIRMED] source: public SEP registry
+      tipo: "Private"         # [CONFIRMED] source: public SEP registry
+      grados: "Grades 1 through 6"
+      descripcion: "Full primary education, one group per grade, with close attention to each student."
+      distintivos:
+        - "English every day"
+        - "Small groups, one group per grade"
+        - "Regional dance"
+        - "Catechism and values formation"
+        - "International Cambridge certification on finishing primary"
+
 # [ASSUMPTION] entirely pending — questionnaire G3 was left unanswered.
 # Real-named testimonials are NOT fabricated (avoids fake social proof).
 # The page shows a "coming soon" state until the client provides real ones.
@@ -220,6 +250,31 @@ nosotros:
     - "Academic excellence"
     - "Personalized attention"
     - "A genuine commitment to service"
+  # [CONFIRMED] "Why Colegio María del Carmen Muriel?" — source: direct
+  # knowledge of the school (same sourcing standard as other [CONFIRMED]
+  # content on the site that doesn't come from a flyer). No specific
+  # religious congregation or identity is named — only "faith" in generic
+  # terms — pending confirmation with the school's director (see README.md
+  # pending item #12).
+  diferenciadores:
+    - icono: "graduacion"
+      titulo: "Nearly 40 years of experience"
+      descripcion: "Training generations of students since 1987."
+    - icono: "mundo"
+      titulo: "English every day"
+      descripcion: "Daily English class, woven into school life."
+    - icono: "familia"
+      titulo: "Small groups"
+      descripcion: "One group per grade, with close attention to each student."
+    - icono: "danza"
+      titulo: "Regional dance"
+      descripcion: "Regular practice of Mexican folk dance."
+    - icono: "cruz"
+      titulo: "Values and faith formation"
+      descripcion: "Catechism and values education as part of every student's formation."
+    - icono: "examen"
+      titulo: "International certification"
+      descripcion: "Students finish primary school with a Cambridge English certification."
   # [CONFIRMED] international English-language certifications — corroborated
   # across 3 separate flyers, including one with a real photo of a real
   # student in the school's courtyard.
@@ -361,9 +416,11 @@ seo:
   # [ASSUMPTION] questionnaire G1 was left unanswered — reasonable
   # keywords for the confirmed business type and city; validate real
   # search intent with the client.
-  titulo_sitio: "Colegio María del Carmen Muriel | Language Courses Mexico City"
-  descripcion_sitio: "A school in Mexico City, founded in 1987. English and French courses, and an exchange program in London and Paris."
+  titulo_sitio: "Colegio María del Carmen Muriel | Primary School & Language Courses in Coyoacán"
+  descripcion_sitio: "Private primary school in Coyoacán, Mexico City, founded in 1987. Daily English, small groups, language courses, and an exchange program in London and Paris."
   palabras_clave:
+    - "private primary school Coyoacán"
+    - "primary school Mexico City"
     - "language courses Mexico City"
     - "English school Mexico City"
     - "French course CDMX"

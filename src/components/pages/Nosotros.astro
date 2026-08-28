@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import Icon from '../Icon.astro';
 import { getContent, type Lang } from '../../i18n/content';
 import { asset } from '../../utils/url';
 
@@ -48,6 +49,27 @@ const { nosotros, galeria } = getContent(lang);
             <li class="rounded-full bg-secondary px-4 py-2 text-sm font-medium text-primary">{v}</li>
           ))}
         </ul>
+      </div>
+    </section>
+  )}
+
+  {nosotros.diferenciadores.length > 0 && (
+    <section class="section-padding">
+      <div class="container-base">
+        <h2 class="font-heading text-2xl font-bold text-primary text-center">
+          {lang === 'es' ? '¿Por qué María del Carmen Muriel?' : 'Why Colegio María del Carmen Muriel?'}
+        </h2>
+        <div class="mt-10 grid gap-10 sm:grid-cols-2 md:grid-cols-3">
+          {nosotros.diferenciadores.map((item) => (
+            <div class="text-center">
+              <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-secondary text-primary">
+                <Icon name={item.icono} class="h-7 w-7" />
+              </div>
+              <h3 class="mt-4 font-heading font-semibold text-primary">{item.titulo}</h3>
+              <p class="mt-1 text-sm text-neutral-600">{item.descripcion}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   )}

@@ -36,6 +36,8 @@ nav:
       href: "/"
     - label: "Nosotros"
       href: "/nosotros"
+    - label: "Niveles Educativos"
+      href: "/niveles-educativos"
     - label: "Maestros"
       href: "/maestros"
     - label: "Cursos"
@@ -191,6 +193,34 @@ intercambio:
     href: "/contacto"
   urgencia: "Cupo limitado por grupo — contáctanos para conocer fechas disponibles."
 
+# [CONFIRMADO] nivel educativo de primaria — CCT, turno y tipo de escuela
+# vienen de registro público SEP. Los distintivos (inglés diario, grupos
+# reducidos, danza regional, catecismo/valores, certificación Cambridge al
+# concluir) vienen de conocimiento directo del colegio, no de un flyer —
+# mismo estándar de fuente que el resto del sitio marcado [CONFIRMADO].
+# Preescolar (CCT 09PJN5649X) se omite intencionalmente: fuentes recientes
+# lo muestran posiblemente inactivo en 2026 — ver README.md pendiente #12
+# antes de agregarlo aquí.
+# NO se publican las cifras de matrícula del ciclo 2022-2023 (112 alumnos,
+# 6 grupos) — son de un ciclo anterior, no una cifra actual.
+niveles_educativos:
+  titulo: "Niveles Educativos"
+  subtitulo: "Primaria con atención cercana"
+  intro: "El Colegio \"María del Carmen Muriel\" ofrece educación primaria privada, en un ambiente de grupos reducidos y formación integral."
+  niveles:
+    - nombre: "Primaria"
+      cct: "09PPR0301P"       # [CONFIRMADO] fuente: registro público SEP
+      turno: "Matutino"       # [CONFIRMADO] fuente: registro público SEP
+      tipo: "Privada"         # [CONFIRMADO] fuente: registro público SEP
+      grados: "1° a 6° grado"
+      descripcion: "Educación primaria completa, con un grupo por grado y atención cercana a cada alumno."
+      distintivos:
+        - "Inglés todos los días"
+        - "Grupos reducidos, un grupo por grado"
+        - "Danza regional"
+        - "Catecismo y formación en valores"
+        - "Certificación internacional Cambridge al concluir la primaria"
+
 # [ASUNCIÓN] pendiente por completo — docx G3 no fue respondida.
 # NO se inventan testimonios con nombres reales (evita prueba social falsa).
 # La página muestra un estado "próximamente" hasta que el cliente
@@ -221,6 +251,30 @@ nosotros:
     - "Excelencia académica"
     - "Atención personalizada"
     - "Vocación de servicio"
+  # [CONFIRMADO] "¿Por qué María del Carmen Muriel?" — fuente: conocimiento
+  # directo del colegio (mismo estándar de fuente que otros datos [CONFIRMADO]
+  # del sitio que no vienen de un flyer). No se nombra una congregación o
+  # identidad religiosa específica — solo "fe" en términos genéricos — hasta
+  # confirmar con dirección (ver README.md pendiente #12).
+  diferenciadores:
+    - icono: "graduacion"
+      titulo: "Casi 40 años de trayectoria"
+      descripcion: "Formando generaciones de alumnos desde 1987."
+    - icono: "mundo"
+      titulo: "Inglés todos los días"
+      descripcion: "Clase diaria de inglés, integrada a la vida escolar."
+    - icono: "familia"
+      titulo: "Grupos reducidos"
+      descripcion: "Un grupo por grado, con atención cercana a cada alumno."
+    - icono: "danza"
+      titulo: "Danza regional"
+      descripcion: "Práctica regular de danza folklórica mexicana."
+    - icono: "cruz"
+      titulo: "Formación en valores y fe"
+      descripcion: "Catecismo y educación en valores como parte de la formación de cada alumno."
+    - icono: "examen"
+      titulo: "Certificación internacional"
+      descripcion: "Los alumnos concluyen la primaria con certificación Cambridge de inglés."
   # [CONFIRMADO] certificaciones internacionales de inglés — corroborado en 3 flyers
   # distintos, incluyendo uno con foto real de un alumno en el patio del colegio.
   acreditaciones:
@@ -359,9 +413,11 @@ aviso_privacidad:
 seo:
   # [ASUNCIÓN] docx G1 no fue respondida — palabras clave razonables
   # para el giro y ciudad confirmados; validar intención de búsqueda real.
-  titulo_sitio: "Colegio María del Carmen Muriel | Cursos de Idiomas CDMX"
-  descripcion_sitio: "Colegio en la Ciudad de México, fundado en 1987. Cursos de inglés y francés, y programa de intercambio en Londres y París."
+  titulo_sitio: "Colegio María del Carmen Muriel | Primaria y Cursos de Idiomas en Coyoacán"
+  descripcion_sitio: "Colegio primaria privada en Coyoacán, Ciudad de México, fundado en 1987. Inglés diario, grupos reducidos, cursos de idiomas y programa de intercambio en Londres y París."
   palabras_clave:
+    - "primaria privada Coyoacán"
+    - "escuela primaria Ciudad de México"
     - "cursos de idiomas CDMX"
     - "escuela de inglés Ciudad de México"
     - "curso de francés CDMX"
