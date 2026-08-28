@@ -54,7 +54,7 @@ nav:
 hero:
   # [ASUNCIÓN] mensaje central — docx pregunta 5.3 no fue marcada
   titulo: "Educar para trascender"
-  subtitulo: "Desde 1987 formamos alumnos bilingües en la Ciudad de México, con cursos de idiomas y un programa de intercambio en el extranjero."
+  subtitulo: "Desde 1987 educamos en la Ciudad de México, con inglés diario, cursos de idiomas y un programa de intercambio en el extranjero."
   imagen: "/images/hero/hero-home.jpg"  # [CONFIRMADO] fotografía real del colegio
   cta_primario:
     texto: "Conoce nuestros cursos"
@@ -66,7 +66,7 @@ hero:
 propuestas_valor:
   - icono: "graduacion"
     titulo: "Casi 40 años de trayectoria"
-    descripcion: "Fundado en 1987, con experiencia formando generaciones de alumnos bilingües."
+    descripcion: "Fundado en 1987, con experiencia formando generaciones de alumnos."
   - icono: "mundo"
     titulo: "Intercambio en el extranjero"
     descripcion: "Programa de una semana en Londres o París, con supervisión y actividades culturales."
@@ -241,7 +241,7 @@ faq:  # [ASUNCIÓN] docx G8 no fue respondida — preguntas genéricas del secto
 
 nosotros:
   titulo: "Educar para trascender"  # [CONFIRMADO] slogan reutilizado
-  subtitulo: "Formando alumnos bilingües desde 1987"  # [ASUNCIÓN]
+  subtitulo: "Educación primaria e idiomas desde 1987"  # [ASUNCIÓN]
   descripcion: "El Colegio \"María del Carmen Muriel\" ofrece cursos de idiomas en la Ciudad de México desde 1987."  # combina datos [CONFIRMADO]
   descripcion_2: "Contáctanos para conocer más sobre nuestra metodología y trayectoria."  # [ASUNCIÓN] docx G10 no fue respondida — se evita inventar metodología específica
   imagen: "/images/nosotros/nosotros-comunidad.jpg"  # [CONFIRMADO] fotografía real del colegio

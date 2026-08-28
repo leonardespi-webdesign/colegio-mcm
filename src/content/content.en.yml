@@ -54,7 +54,7 @@ nav:
 hero:
   # [ASSUMPTION] core message — questionnaire 5.3 was left unmarked
   titulo: "Educate to transcend"
-  subtitulo: "Since 1987 we have trained bilingual students in Mexico City, offering language courses and an international exchange program."
+  subtitulo: "Since 1987 we have educated students in Mexico City, with daily English, language courses, and an international exchange program."
   imagen: "/images/hero/hero-home.jpg"  # [CONFIRMED] real photograph of the school
   cta_primario:
     texto: "See our courses"
@@ -66,7 +66,7 @@ hero:
 propuestas_valor:
   - icono: "graduacion"
     titulo: "Nearly 40 years of experience"
-    descripcion: "Founded in 1987, with a track record of training generations of bilingual students."
+    descripcion: "Founded in 1987, with a track record of training generations of students."
   - icono: "mundo"
     titulo: "International exchange program"
     descripcion: "A one-week program in London or Paris, with supervision and cultural activities."
@@ -240,7 +240,7 @@ faq:  # [ASSUMPTION] questionnaire G8 was left unanswered — generic industry q
 
 nosotros:
   titulo: "Educate to transcend"  # [ASSUMPTION] reused slogan translation
-  subtitulo: "Training bilingual students since 1987"  # [ASSUMPTION]
+  subtitulo: "Primary education and languages since 1987"  # [ASSUMPTION]
   descripcion: "Colegio \"María del Carmen Muriel\" has offered language courses in Mexico City since 1987."  # combines [CONFIRMED] data
   descripcion_2: "Contact us to learn more about our teaching approach and track record."  # [ASSUMPTION] questionnaire G10 unanswered — a specific methodology is not invented
   imagen: "/images/nosotros/nosotros-comunidad.jpg"  # [CONFIRMED] real photograph of the school
